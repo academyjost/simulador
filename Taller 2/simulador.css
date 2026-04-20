@@ -1,70 +1,167 @@
+/* Paleta de colores Banco Pichincha */
+:root {
+    --pichincha-amarillo: #ffdd00;
+    --pichincha-amarillo-hover: #e6c700;
+    --pichincha-azul: #002855; /* Azul institucional */
+    --pichincha-gris-fondo: #f4f4f4;
+    --pichincha-texto: #2d2d2d;
+    --blanco: #ffffff;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--pichincha-gris-fondo);
     margin: 0;
-    padding: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 480px;
+    width: 100%;
+    padding: 40px;
+    background-color: var(--blanco);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-top: 10px solid var(--pichincha-amarillo);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse por el contenedor */
+.container:hover {
+    transform: translateY(-5px);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 200px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 h1 {
+    color: var(--pichincha-azul);
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: 800;
 }
 
 h2 {
-    margin-top: 20px;
+    color: var(--pichincha-azul);
+    border-left: 4px solid var(--pichincha-amarillo);
+    padding-left: 10px;
     font-size: 18px;
+    margin-top: 25px;
 }
 
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border: 2px solid #eee;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-p {
-    margin-top: 10px;
+/* Dinamismo en los inputs */
+input:focus {
+    outline: none;
+    border-color: var(--pichincha-amarillo);
+    box-shadow: 0 0 8px rgba(255, 221, 0, 0.4);
+}
+
+.resultados {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+    border: 1px solid #eee;
+}
+
+.resultados p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    color: var(--pichincha-texto);
+    font-size: 15px;
 }
 
 span {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 700;
+    color: var(--pichincha-azul);
+}
+
+#spnEstadoCredito {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    gap: 15px;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
+    flex: 1;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
     cursor: pointer;
+    transition: all 0.3s active;
+    text-transform: uppercase;
 }
 
-button:hover {
-    background-color: #2980b9;
+#btnCalcular {
+    background-color: var(--pichincha-amarillo);
+    color: var(--pichincha-azul);
+    box-shadow: 0 4px 0 #d4b800;
+}
+
+#btnCalcular:hover {
+    background-color: var(--pichincha-amarillo-hover);
+    transform: translateY(-2px);
+}
+
+#btnCalcular:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+#btnReiniciar {
+    background-color: var(--pichincha-azul);
+    color: var(--blanco);
+}
+
+#btnReiniciar:hover {
+    background-color: #003d82;
+    opacity: 0.9;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 30px 0;
 }

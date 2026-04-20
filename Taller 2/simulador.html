@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>Simulador de Crédito - Banco Pichincha</title>
     <link rel="stylesheet" href="simulador.css">
 </head>
 <body>
 
     <div class="container">
+        <div class="logo-container">
+            <img src="banco.png" alt="Logo Banco Pichincha" class="logo">
+        </div>
+
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <label for="txtIngresos">Ingresos Mensuales:</label>
+        <input type="number" id="txtIngresos" placeholder="Ej: 1000">
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <label for="txtEgresos">Egresos Mensuales:</label>
+        <input type="number" id="txtEgresos" placeholder="Ej: 400">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <p>Disponible: <span id="spnDisponible">$0.00</span></p>
+        <p>Capacidad de pago (40%): <span id="spnCapacidadPago">$0.00</span></p>
+
+        <hr>
 
         <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <label for="txtMonto">Monto del Préstamo:</label>
+        <input type="number" id="txtMonto" placeholder="Ej: 5000">
 
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <label for="txtPlazo">Plazo (Años):</label>
+        <input type="number" id="txtPlazo" placeholder="Ej: 3">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtTasaInteres">Tasa de interés anual (%):</label>
+        <input type="number" id="txtTasaInteres" placeholder="Ej: 15">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <div class="resultados">
+            <p>Interés total: <span id="spnInteresPagar">$0.00</span></p>
+            <p>Total a pagar: <span id="spnTotalPrestamo">$0.00</span></p>
+            <p>Cuota mensual: <span id="spnCuotaMensual">$0.00</span></p>
+            <p>Estado: <span id="spnEstadoCredito">ESPERANDO DATOS...</span></p>
+        </div>
 
         <div class="buttons">
-            <button id="btnCalcularCredito">Calcular Crédito</button>
+            <button id="btnCalcular">Calcular Crédito</button>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
     </div>
 
+    <script src="utils.js"></script> <script src="funciones.js"></script>
+    <script src="simulador.js"></script>
 </body>
 </html>
