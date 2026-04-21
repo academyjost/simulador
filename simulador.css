@@ -1,167 +1,212 @@
-/* Paleta de colores Banco Pichincha */
+/* --- PALETA DE COLORES VIP --- */
 :root {
-    --pichincha-amarillo: #ffdd00;
-    --pichincha-amarillo-hover: #e6c700;
-    --pichincha-azul: #002855; /* Azul institucional */
-    --pichincha-gris-fondo: #f4f4f4;
-    --pichincha-texto: #2d2d2d;
+    --vip-negro-fondo: #0a0a0a; /* Fondo muy oscuro, casi negro */
+    --vip-negro-contenedor: #161616; /* Contenedor negro mate */
+    --vip-dorado: #c5a059; /* Dorado elegante, no amarillo */
+    --vip-dorado-brillo: #e4c68b; /* Dorado más claro para hovers */
+    --vip-azul-marino: #001f3f; /* Azul marino profundo */
+    --vip-texto-principal: #e0e0e0; /* Gris muy claro, casi blanco */
+    --vip-texto-secundario: #a0a0a0; /* Gris medio para labels */
     --blanco: #ffffff;
 }
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--pichincha-gris-fondo);
+    background-color: var(--vip-negro-fondo);
     margin: 0;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color: var(--vip-texto-principal);
 }
 
 .container {
-    max-width: 480px;
+    max-width: 500px;
     width: 100%;
-    padding: 40px;
-    background-color: var(--blanco);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border-top: 10px solid var(--pichincha-amarillo);
-    transition: transform 0.3s ease;
+    padding: 50px;
+    background-color: var(--vip-negro-contenedor);
+    border-radius: 20px;
+    /* Sombra sutil pero profunda para dar efecto de flotado */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    /* Borde dorado superior elegante y fino */
+    border-top: 5px solid var(--vip-dorado);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(197, 160, 89, 0.1); /* Borde dorado muy tenue alrededor */
 }
 
-/* Efecto sutil al pasar el mouse por el contenedor */
+/* Efecto VIP al pasar el mouse por el contenedor */
 .container:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(197, 160, 89, 0.15); /* Brillo dorado suave */
 }
 
 .logo-container {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .logo {
-    width: 200px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    width: 220px;
+    /* Filtro para que el logo se vea dorado/blanco sobre fondo negro */
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg);
 }
 
 h1 {
-    color: var(--pichincha-azul);
+    color: var(--blanco);
     text-align: center;
-    font-size: 26px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    margin-bottom: 10px;
     font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Subtítulo VIP */
+.container::after {
+    content: "EXPERIENCIA EXCLUSIVA";
+    display: block;
+    text-align: center;
+    color: var(--vip-dorado);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: var(--pichincha-azul);
-    border-left: 4px solid var(--pichincha-amarillo);
-    padding-left: 10px;
-    font-size: 18px;
-    margin-top: 25px;
+    color: var(--vip-dorado);
+    border-left: 3px solid var(--vip-dorado);
+    padding-left: 15px;
+    font-size: 20px;
+    margin-top: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 label {
     display: block;
-    margin-top: 15px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #666;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--vip-texto-secundario);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
 }
 
 input {
     width: 100%;
-    padding: 12px 15px;
-    margin-top: 8px;
-    border: 2px solid #eee;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.03); /* Fondo input casi invisible */
+    border: 1px solid rgba(197, 160, 89, 0.2); /* Borde dorado muy tenue */
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--blanco);
+    transition: all 0.3s ease;
 }
 
-/* Dinamismo en los inputs */
+/* Enfoque VIP en los inputs */
 input:focus {
     outline: none;
-    border-color: var(--pichincha-amarillo);
-    box-shadow: 0 0 8px rgba(255, 221, 0, 0.4);
+    border-color: var(--vip-dorado);
+    background-color: rgba(197, 160, 89, 0.05);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
 }
 
 .resultados {
-    background-color: #f9f9f9;
-    padding: 20px;
+    background-color: var(--vip-azul-marino); /* Fondo azul marino profundo */
+    padding: 25px;
     border-radius: 12px;
-    margin-top: 25px;
-    border: 1px solid #eee;
+    margin-top: 30px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .resultados p {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
-    color: var(--pichincha-texto);
-    font-size: 15px;
+    margin: 15px 0;
+    color: var(--vip-texto-principal);
+    font-size: 16px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    padding-bottom: 10px;
+}
+
+.resultados p:last-child {
+    border-bottom: none;
 }
 
 span {
     font-weight: 700;
-    color: var(--pichincha-azul);
+    color: var(--vip-dorado); /* Los números son dorados */
+    font-size: 18px;
 }
 
+/* Estado del crédito con estilo VIP */
 #spnEstadoCredito {
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
     font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid currentColor; /* Usa el color de texto para el borde */
 }
 
 .buttons {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 button {
     flex: 1;
-    padding: 14px;
+    padding: 16px;
     border: none;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s active;
+    transition: all 0.3s ease;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #btnCalcular {
-    background-color: var(--pichincha-amarillo);
-    color: var(--pichincha-azul);
-    box-shadow: 0 4px 0 #d4b800;
+    /* Botón dorado con texto negro/azul marino */
+    background-color: var(--vip-dorado);
+    color: var(--vip-negro-fondo);
+    box-shadow: 0 5px 0 #9e8146; /* Sombra dorada más oscura */
 }
 
 #btnCalcular:hover {
-    background-color: var(--pichincha-amarillo-hover);
-    transform: translateY(-2px);
+    background-color: var(--vip-dorado-brillo);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(197, 160, 89, 0.4);
 }
 
 #btnCalcular:active {
     transform: translateY(2px);
-    box-shadow: none;
+    box-shadow: 0 2px 0 #9e8146;
 }
 
 #btnReiniciar {
-    background-color: var(--pichincha-azul);
-    color: var(--blanco);
+    /* Botón negro mate con borde dorado */
+    background-color: transparent;
+    color: var(--vip-dorado);
+    border: 2px solid var(--vip-dorado);
 }
 
 #btnReiniciar:hover {
-    background-color: #003d82;
-    opacity: 0.9;
+    background-color: rgba(197, 160, 89, 0.1);
+    color: var(--vip-dorado-brillo);
+    border-color: var(--vip-dorado-brillo);
 }
 
 hr {
     border: 0;
-    border-top: 1px dashed #ccc;
-    margin: 30px 0;
+    border-top: 1px solid rgba(197, 160, 89, 0.2); /* Línea divisoria dorada tenue */
+    margin: 40px 0;
 }
